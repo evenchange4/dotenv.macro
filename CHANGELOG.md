@@ -1,7 +1,9 @@
 ## Change Log
 
-### upcoming (2018/01/18 09:07 +00:00)
+### v1.0.0 (2018/01/18 09:16 +00:00)
 
+* [7208781](https://github.com/evenchange4/dotenv.macro/commit/72087810f2bc4195c0bc860ede6cb90dc3da934b) 1.0.0 (@evenchange4)
+* [#2](https://github.com/evenchange4/dotenv.macro/pull/2) feat: setup travis auto release & changelog (#2) (@evenchange4)
 * [#1](https://github.com/evenchange4/dotenv.macro/pull/1) Configure Renovate (@evenchange4)
 * [e7ac352](https://github.com/evenchange4/dotenv.macro/commit/e7ac3520a91b17bd22d61d96013be2762e5f90cd) Add renovate.json (@renovate[bot])
 * [78cf470](https://github.com/evenchange4/dotenv.macro/commit/78cf4703f0d14472ab166ad8428a38c733a30b97) chore(travis): setup & add readme (@evenchange4)
