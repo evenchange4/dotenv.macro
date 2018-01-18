@@ -1,5 +1,6 @@
 // @flow
 import dotenv from 'dotenv';
+import dotenvExpand from 'dotenv-expand';
 import { createMacro } from 'babel-plugin-macros';
 // import printAST from 'ast-pretty-print';
 // console.log(printAST(referencePath.parentPath))
@@ -23,6 +24,8 @@ function valueExpression(
   );
 }
 
+let cacheDotenv;
+
 function dotenvMacro({
   references,
   babel: { types: t },
@@ -31,8 +34,10 @@ function dotenvMacro({
   babel: { types: any },
 }): void {
   // Note: Load dotenv file
-  const { parsed, error } = dotenv.config();
-  if (error) throw new Error(error);
+  if (!cacheDotenv) {
+    cacheDotenv = dotenv.config();
+    dotenvExpand(cacheDotenv);
+  }
   const { default: defaultEnvs = [], ...destructureEnv } = references;
 
   // Case 1: import env from 'dotenv.macro'
@@ -42,7 +47,7 @@ function dotenvMacro({
       const value = process.env[name];
       referencePath.parentPath.replaceWith(valueExpression(t, { name, value }));
     } else {
-      const parsedAst = Object.keys(parsed).map(name => {
+      const parsedAst = Object.keys(cacheDotenv.parsed).map(name => {
         const value = (process.env: any)[name];
         return t.objectProperty(
           t.stringLiteral(name),

@@ -75,11 +75,18 @@ pluginTester({
         console.log(HOST);
       `,
     },
-    '[require] NODE_ENV from CLI': {
+    '[CLI] NODE_ENV': {
       error: false,
       code: `
-        const { NODE_ENV } = require('../macro');
+        import { NODE_ENV } from '../macro';
         console.log(NODE_ENV);
+      `,
+    },
+    '[dotenv-expand] EXPAND_NODE_ENV': {
+      error: false,
+      code: `
+        import { EXPAND_NODE_ENV } from '../macro';
+        console.log(EXPAND_NODE_ENV);
       `,
     },
   },

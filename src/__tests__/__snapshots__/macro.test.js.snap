@@ -1,5 +1,27 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`macros [CLI] NODE_ENV: [CLI] NODE_ENV 1`] = `
+
+import { NODE_ENV } from 'dotenv.macro';
+console.log(NODE_ENV);
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+console.log(process && process.env && process.env.NODE_ENV || "test");
+
+`;
+
+exports[`macros [dotenv-expand] EXPAND_NODE_ENV: [dotenv-expand] EXPAND_NODE_ENV 1`] = `
+
+import { EXPAND_NODE_ENV } from 'dotenv.macro';
+console.log(EXPAND_NODE_ENV);
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+console.log(process && process.env && process.env.EXPAND_NODE_ENV || "NODE_ENV=test");
+
+`;
+
 exports[`macros [import] all: [import] all 1`] = `
 
 import env from 'dotenv.macro';
@@ -9,7 +31,8 @@ console.log(env);
 
 console.log({
   "PORT": process && process.env && process.env.PORT || "3001",
-  "HOST": process && process.env && process.env.HOST || "localhost"
+  "HOST": process && process.env && process.env.HOST || "localhost",
+  "EXPAND_NODE_ENV": process && process.env && process.env.EXPAND_NODE_ENV || "NODE_ENV=test"
 });
 
 `;
@@ -49,17 +72,6 @@ console.log(process && process.env && process.env.PORT || "3001");
 
 `;
 
-exports[`macros [require] NODE_ENV from CLI: [require] NODE_ENV from CLI 1`] = `
-
-const { NODE_ENV } = require('dotenv.macro');
-console.log(NODE_ENV);
-
-      ↓ ↓ ↓ ↓ ↓ ↓
-
-console.log(process && process.env && process.env.NODE_ENV || "test");
-
-`;
-
 exports[`macros [require] all: [require] all 1`] = `
 
 const env = require('dotenv.macro');
@@ -69,7 +81,8 @@ console.log(env);
 
 console.log({
   "PORT": process && process.env && process.env.PORT || "3001",
-  "HOST": process && process.env && process.env.HOST || "localhost"
+  "HOST": process && process.env && process.env.HOST || "localhost",
+  "EXPAND_NODE_ENV": process && process.env && process.env.EXPAND_NODE_ENV || "NODE_ENV=test"
 });
 
 `;
