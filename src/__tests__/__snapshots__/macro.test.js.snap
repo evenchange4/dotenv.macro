@@ -1,0 +1,110 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`macros [import] all: [import] all 1`] = `
+
+import env from 'dotenv.macro';
+console.log(env);
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+console.log({
+  "PORT": process && process.env && process.env.PORT || "3001",
+  "HOST": process && process.env && process.env.HOST || "localhost"
+});
+
+`;
+
+exports[`macros [import] destructure with multiple values: [import] destructure with multiple values 1`] = `
+
+import { PORT, HOST } from 'dotenv.macro';
+console.log(PORT);
+console.log(HOST);
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+console.log(process && process.env && process.env.PORT || "3001");
+console.log(process && process.env && process.env.HOST || "localhost");
+
+`;
+
+exports[`macros [import] destructure with single value: [import] destructure with single value 1`] = `
+
+import { PORT } from 'dotenv.macro';
+console.log(PORT);
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+console.log(process && process.env && process.env.PORT || "3001");
+
+`;
+
+exports[`macros [import] inline the value: [import] inline the value 1`] = `
+
+import env from 'dotenv.macro';
+console.log(env.PORT);
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+console.log(process && process.env && process.env.PORT || "3001");
+
+`;
+
+exports[`macros [require] NODE_ENV from CLI: [require] NODE_ENV from CLI 1`] = `
+
+const { NODE_ENV } = require('dotenv.macro');
+console.log(NODE_ENV);
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+console.log(process && process.env && process.env.NODE_ENV || "test");
+
+`;
+
+exports[`macros [require] all: [require] all 1`] = `
+
+const env = require('dotenv.macro');
+console.log(env);
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+console.log({
+  "PORT": process && process.env && process.env.PORT || "3001",
+  "HOST": process && process.env && process.env.HOST || "localhost"
+});
+
+`;
+
+exports[`macros [require] destructure with multiple values: [require] destructure with multiple values 1`] = `
+
+const { PORT, HOST } = require('dotenv.macro');
+console.log(PORT);
+console.log(HOST);
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+console.log(process && process.env && process.env.PORT || "3001");
+console.log(process && process.env && process.env.HOST || "localhost");
+
+`;
+
+exports[`macros [require] destructure with single value: [require] destructure with single value 1`] = `
+
+const { PORT } = require('dotenv.macro');
+console.log(PORT);
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+console.log(process && process.env && process.env.PORT || "3001");
+
+`;
+
+exports[`macros [require] inline the value: [require] inline the value 1`] = `
+
+const env = require('dotenv.macro');
+console.log(env.PORT);
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+console.log(process && process.env && process.env.PORT || "3001");
+
+`;
