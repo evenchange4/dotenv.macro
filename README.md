@@ -26,13 +26,16 @@ $ yarn add dotenv.macro
 ## Usage
 
 ```js
-import { PORT, HOST } from 'dotenv.macro';
-console.log(PORT);
+// .env
+HOST=localhost
+EXPAND_NODE_ENV="NODE_ENV=${NODE_ENV}"
+
+// index.js
+import { HOST } from 'dotenv.macro';
 console.log(HOST);
 
       ↓ ↓ ↓ ↓ ↓ ↓
 
-console.log(process && process.env && process.env.PORT || "3001");
 console.log(process && process.env && process.env.HOST || "localhost");
 ```
 

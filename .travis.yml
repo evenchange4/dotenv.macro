@@ -22,6 +22,16 @@ script:
 after_success:
   - ./node_modules/.bin/codecov
 
+deploy:
+  - provider: npm
+    email: evenchange4@gmail.com
+    api_key:
+      secure: SAHsOamV5eq/QC5E6GpbFI6T7D6zyk02Mcm4BFT+rLoMLh2lHyEfwciWQ5JxW5jUq+TgFryJKY5qeIPjpx3WJyqArkYp9OeHtUxmfMx613zrS1+LSkoFNV6kx8NSYE2MNAacJac3z61/e0MdAxE6ITIkMcK4GiVMHmrCDcf5I3sUodO/hIS5j0Pj1Hp5CvfsBwdgO2fbRJUs5+1ucY1oZXu4bG1UlQyvZN2RSlik4CGMBAHEOLJVB2WPUQKbTQu1FnACb5hRgersZ4T5cRV/r6yZ4JUl1jdz6M9PIymxA6Sw7My+azbJbS3rGz5R9+sSicuBxCQr9sYdqWPLRLP6ToeuE0rCebB/PCwrl1AenN4qvpZWYhpMvWr9aKus1pmTOP8H92fDqGiniH4eZEhbV61rtiVWLPYN5DPGtuyVKcEXk3MCQ/LqjXiKtNpDWNweEsQvRTXHH/B1WjtPRNXXZbhLoDkOzEdXVMGlorfmDRNots7tDZ4Q53jQzLii1F6wR+JMLfp7PNUIMOxVH55IAEnNSVBmjpEIcFDhFQOduk22aEYZGQQ79nt4v1NDE/OPXpMQDZWyBu7tpNlDDSSU/cmvRbwTvxEKaLlUonSLo6gy/jw6h/M4nVm/GaGfrHRe/oNZHWdyW0SIK06GcSCxkuZbd6rfe9yqkEtpEpDpz4Y=
+    skip_cleanup: true
+    on:
+      tags: true
+      repo: evenchange4/dotenv.macro
+
 cache:
   yarn: true
   directories:
