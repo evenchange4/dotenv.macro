@@ -1,6 +1,6 @@
 # dotenv.macro
 
-> Inline dotenv at build-time with babel-macros.
+> Inline dotenv at build-time with babel-plugin-macros.
 
 [![Travis][build-badge]][build]
 [![Codecov Status][codecov-badge]][codecov]

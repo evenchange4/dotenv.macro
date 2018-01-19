@@ -1,7 +1,7 @@
 {
   "name": "dotenv.macro",
   "version": "1.0.0",
-  "description": "Inline dotenv at build-time with babel-macros.",
+  "description": "Inline dotenv at build-time with babel-plugin-macros.",
   "author": "Michael Hsu <evenchange4@gmail.com>",
   "license": "MIT",
   "main": "lib/index.js",
